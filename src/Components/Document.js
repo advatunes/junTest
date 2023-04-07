@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import {useParams} from 'react-router-dom'
 
 import * as api from '../api';
 
@@ -10,9 +11,13 @@ const password = 'p12345678';
 function Document() {
   const [document, setDocument] = useState([]);
 
+
+  const {recordId} = useParams();
+
+
+
   useEffect(() => {
-    const id = localStorage.getItem('recordId');
-    api.getdocument(login, password, id).then((res) => {
+    api.getdocument(login, password, recordId.substring(3)).then((res) => {
       setDocument(res.data.data1);
     });
   }, []);

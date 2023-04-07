@@ -20,8 +20,9 @@ export default function TableDocuments({ recordId, setRecordId }) {
   function handleRowDblClick(e) {
     const id = e.data.id_record;
     setRecordId(id);
-    localStorage.setItem('recordId', id);
-    navigate({ pathname: '/Document' });
+    // localStorage.setItem('recordId', id);
+
+    navigate({ pathname: `/Document/id=${id}` });
   }
 
   useEffect(() => {
