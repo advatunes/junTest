@@ -51,14 +51,7 @@ function Document() {
         ></DataGrid>
       </div>
       <div className='flex-element'>
-        <DataGrid
-          dataSource={pivotDataSource}
-          allowColumnResizing={true}
-          showBorders={true}
-          columnMinWidth={50}
-          rowAlternationEnabled={true}
-          keyExpr='id_inst'
-        ></DataGrid>
+  
       </div>
     </div>
   );
